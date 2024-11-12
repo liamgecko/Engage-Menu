@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="dist/output.css" rel="stylesheet">
+  <script src="https://unpkg.com/feather-icons"></script>
+  <style>
+    .transition-height-opacity {
+      transition: max-height 0.3s ease, opacity 0.3s ease;
+    }
+  </style>
+</head>
+<body class="sans-serif">
+
+<!-- HEADER -->
+<div class="flex items-center justify-between bg-blue-950 p-4">
+
+    <div class="flex items-center">
+        <img src="img/gecko-logo.svg" alt="Gecko Logo" class="w-[90px]">
+    </div>
+
+    <div class="relative">
+
+      <button onclick="toggleDropdown()" class="flex items-center space-x-2 text-white focus:outline-none">
+          <img class="w-8 h-8 rounded-full border" src="img/avatar.jpg" alt="User Avatar">
+          <span>Liam Young</span>
+          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+      </button>
+  
+      <div id="dropdown" class="absolute right-0 mt-2 w-[220px] bg-white rounded-lg shadow-lg opacity-0 transform scale-95 -translate-y-2 transition-all duration-300 ease-in-out invisible">
+          <div class="py-2 px-4 border-b border-gray-200 text-sm text-gray-800">
+              Set status as <span class="font-semibold">unavailable</span>
+          </div>
+          <ul class="py-2 text-gray-700 text-sm">
+              <li class="hover:bg-gray-100"><a href="#" class="block px-4 py-2">Switch to dark mode</a></li>
+              <li class="hover:bg-gray-100"><a href="#" class="block px-4 py-2">Agent settings</a></li>
+              <li class="hover:bg-gray-100"><a href="#" class="block px-4 py-2">Security preferences</a></li>
+              <li class="hover:bg-gray-100"><a href="#" class="block px-4 py-2">My accounts</a></li>
+              <li class="hover:bg-gray-100"><a href="#" class="block px-4 py-2">Service status</a></li>
+              <li class="hover:bg-gray-100"><a href="#" class="block px-4 py-2">Gecko academy</a></li>
+              <li class="hover:bg-gray-100"><a href="#" class="block px-4 py-2">Contact support</a></li>
+              <li class="hover:bg-gray-100"><a href="#" class="block px-4 py-2">Product changes</a></li>
+              <li class="hover:bg-gray-100"><a href="#" class="block px-4 py-2">Suggest a feature</a></li>
+              <li class="border-t border-gray-200 hover:bg-red-100"><a href="#" class="block px-4 py-2 text-red-600">Logout</a></li>
+          </ul>
+      </div>
+
+    </div>
+
+</div>
+
+<!-- Sidebar -->
+<div class="flex h-[calc(100vh-4rem)] bg-gray-50 text-gray-800">
+    <aside class="w-64 bg-white border-r border-gray-100 flex flex-col">
+      <nav class="flex-1 py-4 px-2 overflow-y-auto">
+
+        <a href="#" class="flex items-center p-2 rounded space-x-3 text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">
+          <i data-feather="home" class="w-4 h-4"></i>
+          <span>Overview</span>
+        </a>
+
+        <div>
+            <a href="#" onclick="toggleSubmenu('formsMenu')" class="flex items-center justify-between p-2 rounded space-x-3 text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">
+                <div class="flex items-center space-x-3">
+                    <i data-feather="file-text" class="w-4 h-4"></i>
+                    <span>Forms</span>
+                </div>
+                <i data-feather="chevron-down" class="w-4 h-4"></i>
+            </a>
+            <div id="formsMenu" class="overflow-hidden max-h-0 opacity-0 transition-height-opacity relative before:content-[''] before:absolute before:top-[8px] before:bottom-[8px] before:w-[1px] before:bg-gray-100 before:left-[16px]">
+                <div class="my-2 ml-6">
+                    <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Responses</a>
+                    <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Field options</a>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <a href="#" onclick="toggleSubmenu('eventsMenu')" class="flex items-center justify-between p-2 rounded space-x-3 text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">
+                <div class="flex items-center space-x-3">
+                    <i data-feather="calendar" class="w-4 h-4"></i>
+                    <span>Events</span>
+                </div>
+                <i data-feather="chevron-down" class="w-4 h-4"></i>
+            </a>
+            <div id="eventsMenu" class="overflow-hidden max-h-0 opacity-0 transition-height-opacity relative before:content-[''] before:absolute before:top-[8px] before:bottom-[8px] before:w-[1px] before:bg-gray-100 before:left-[16px]">
+                <div class="my-2 ml-6">
+                    <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Hosts</a>
+                    <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Locations</a>
+                    <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Share events</a>
+                    <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Deleted events</a>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <a href="#" onclick="toggleSubmenu('conversationsMenu')" class="flex items-center justify-between p-2 rounded space-x-3 text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">
+                <div class="flex items-center space-x-3">
+                    <i data-feather="phone" class="w-4 h-4"></i>
+                    <span>Call</span>
+                </div>
+                <i data-feather="chevron-down" class="w-4 h-4"></i>
+            </a>
+            <div id="conversationsMenu" class="overflow-hidden max-h-0 opacity-0 transition-height-opacity relative before:content-[''] before:absolute before:top-[8px] before:bottom-[8px] before:w-[1px] before:bg-gray-100 before:left-[16px]">
+                <div class="my-2 ml-6">
+                    <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Overview</a>
+                    <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Calls</a>
+                    <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Call scripts</a>
+                    <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Call campaigns</a>
+                    <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Outcomes</a>
+                    <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Numbers</a>
+                    <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Agents</a>
+                    <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Reporting</a>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <a href="#" onclick="toggleSubmenu('callMenu')" class="flex items-center justify-between p-2 rounded space-x-3 text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">
+                <div class="flex items-center space-x-3">
+                <i data-feather="message-square" class="w-4 h-4"></i>
+                <span>Conversations</span>
+                </div>
+                <i data-feather="chevron-down" class="w-4 h-4"></i>
+            </a>
+            <div id="callMenu" class="overflow-hidden max-h-0 opacity-0 transition-height-opacity relative before:content-[''] before:absolute before:top-[8px] before:bottom-[8px] before:w-[1px] before:bg-gray-100 before:left-[16px]">
+                <div class="my-2 ml-6">
+                    <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Workflows</a>
+                    <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Channels</a>
+                    <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Widgets</a>
+                    <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Bots</a>
+                    <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Reporting</a>
+                    <span class="block pt-4 pb-2 ml-2 uppercase text-gray-500 text-[10px] font-bold tracking-[0.025rem]">Settings</span>
+                    <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Saved replies</a>
+                    <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Custom fields</a>
+                    <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Agents</a>
+                    <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Teams</a>
+                    <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Integrations</a>
+                    <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Exports</a>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <a href="#" onclick="toggleSubmenu('broadcastsMenu')" class="flex items-center justify-between p-2 rounded space-x-3 text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">
+                <div class="flex items-center space-x-3">
+                <i data-feather="speaker" class="w-4 h-4"></i>
+                <span>Broadcasts</span>
+                </div>
+                <i data-feather="chevron-down" class="w-4 h-4"></i>
+            </a>
+            <div id="broadcastsMenu" class="overflow-hidden max-h-0 opacity-0 transition-height-opacity relative before:content-[''] before:absolute before:top-[8px] before:bottom-[8px] before:w-[1px] before:bg-gray-100 before:left-[16px]">
+                <div class="my-2 ml-6">
+                    <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Templates</a>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <a href="#" onclick="toggleSubmenu('organisationsMenu')" class="flex items-center justify-between p-2 rounded space-x-3 text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">
+                <div class="flex items-center space-x-3">
+                <i data-feather="grid" class="w-4 h-4"></i>
+                <span>Organisations</span>
+                </div>
+                <i data-feather="chevron-down" class="w-4 h-4"></i>
+            </a>
+            <div id="organisationsMenu" class="overflow-hidden max-h-0 opacity-0 transition-height-opacity relative before:content-[''] before:absolute before:top-[8px] before:bottom-[8px] before:w-[1px] before:bg-gray-100 before:left-[16px]">
+                <div class="my-2 ml-6">
+                    <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Organistaion fields</a>
+                    <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Organisation types</a>
+                </div>
+            </div>
+        </div>
+
+        <a href="#" class="flex items-center p-2 rounded space-x-3 text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">
+          <i data-feather="layout" class="w-4 h-4"></i>
+          <span>Landing pages</span>
+        </a>
+
+        <div>
+            <a href="#" onclick="toggleSubmenu('contactsMenu')" class="flex items-center justify-between p-2 rounded space-x-3 text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">
+                <div class="flex items-center space-x-3">
+                <i data-feather="user" class="w-4 h-4"></i>
+                <span>Contacts</span>
+                </div>
+                <i data-feather="chevron-down" class="w-4 h-4"></i>
+            </a>
+            <div id="contactsMenu" class="overflow-hidden max-h-0 opacity-0 transition-height-opacity relative before:content-[''] before:absolute before:top-[8px] before:bottom-[8px] before:w-[1px] before:bg-gray-100 before:left-[16px]">
+                <div class="my-2 ml-6">
+                    <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Tasks and objectives</a>
+                    <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Contact fields</a>
+                </div>
+            </div>
+        </div>
+
+        <a href="#" class="flex items-center p-2 rounded space-x-3 text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">
+          <i data-feather="inbox" class="w-4 h-4"></i>
+          <span>Messages</span>
+        </a>
+
+        <a href="#" class="flex items-center p-2 rounded space-x-3 text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">
+          <i data-feather="bar-chart-2" class="w-4 h-4"></i>
+          <span>Reporting</span>
+        </a>
+
+        <a href="#" class="flex items-center p-2 rounded space-x-3 text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">
+          <i data-feather="settings" class="w-4 h-4"></i>
+          <span>Settings</span>
+        </a>
+
+      </nav>
+  
+      <!-- Fixed Collapse Button -->
+      <div class="p-4 border-t border-gray-100 flex justify-center">
+        <button class="text-gray-600 hover:text-blue-600">
+          <i data-feather="chevron-left" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </aside>
+  </div>
+
+<script>
+  function toggleDropdown() {
+    const dropdown = document.getElementById('dropdown');
+    dropdown.classList.toggle('opacity-0');
+    dropdown.classList.toggle('invisible');
+    dropdown.classList.toggle('scale-95');
+    dropdown.classList.toggle('-translate-y-2');
+  }
+  function toggleSubmenu(id) {
+    const submenu = document.getElementById(id);
+
+    if (submenu.style.maxHeight) {
+      // If submenu is open, close it
+      submenu.style.maxHeight = null;
+      submenu.style.opacity = '0';
+    } else {
+      // If submenu is closed, open it
+      submenu.style.maxHeight = submenu.scrollHeight + "px";
+      submenu.style.opacity = '1';
+    }
+  }
+  feather.replace();
+</script>
+
+</body>
+</html>
