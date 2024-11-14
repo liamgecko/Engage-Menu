@@ -2,4 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "@fontsource/inter"; 
+@layer base {
+    @font-face {
+      font-family: 'Satoshi-Variable';
+      src: url('../fonts/Satoshi-Variable.woff2') format('woff2'),
+           url('../fonts/Satoshi-Variable.woff') format('woff'),
+           url('../fonts/Satoshi-Variable.ttf') format('truetype');
+      font-weight: 300 900;
+      font-display: swap;
+      font-style: normal;
+      font-feature-settings: 'salt';
+    }
+    body,
+    * {
+        font-feature-settings: 'salt';
+    }
+    .transition-height-opacity {
+        transition: max-height 0.3s ease, opacity 0.3s ease;
+    }
+    #sidebar {
+        width: 256px;
+    }
+    #sidebar.menu-collapsed {
+        width: 60px;
+    }
+    #sidebar.menu-collapsed nav > div a {
+        display: flex;
+    }
+    #sidebar.menu-collapsed nav > a,
+    #sidebar.menu-collapsed nav > div > a {
+        justify-content: center;
+        height: 40px;
+    }
+    #sidebar.menu-collapsed nav > a span,
+    #sidebar.menu-collapsed nav > div > a span,
+    #sidebar.menu-collapsed nav .dropdown-arrow,
+    #sidebar.menu-collapsed nav #formsMenu {
+        display: none;
+    }
+    .flyout-menu {
+        display: none;
+    }
+    #sidebar.menu-collapsed .flyout-menu {
+        display: block;
+    }
+    #formsFlyout {
+        top: 52px !important;
+    }
+    #eventsFlyout {
+        top: 92px !important;
+    }
+    #callFlyout {
+        top: 130px !important;
+    }
+    #conversationsFlyout {
+        top: 164px !important;
+    }
+    #broadcastsFlyout {
+        top: 214px !important;
+    }
+    #organisationsFlyout {
+        top: 250px !important;
+    }
+    #contactsFlyout {
+        top: 332px !important;
+    }
+}
