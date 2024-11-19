@@ -11,5 +11,10 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addVariant }) {
+      addVariant('peer-menu-collapsed', '&.menu-collapsed ~ &');
+    },
+    require('@tailwindcss/forms'), 
+  ],
 };
