@@ -802,12 +802,6 @@ function showFlyout(event, flyoutId) {
         <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Forms overview</a>
         <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Responses</a>
         <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Field options</a>
-        <span class="block pt-4 pb-2 ml-2 uppercase text-blue-950 text-[10px] font-bold tracking-[0.025rem]">Settings</span>
-        <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Integrations</a>
-        <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Import data</a>
-        <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Export data</a>
-        <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Contact fields</a>
-        <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Labels</a>
       `;
       break;
     case 'eventsFlyout':
@@ -817,11 +811,6 @@ function showFlyout(event, flyoutId) {
         <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Locations</a>
         <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Share events</a>
         <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Deleted events</a>
-        <span class="block pt-4 pb-2 ml-2 uppercase text-blue-950 text-[10px] font-bold tracking-[0.025rem]">Settings</span>
-        <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Integrations</a>
-        <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Import data</a>
-        <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Export data</a>
-        <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Labels</a>
       `;
       break;
     case 'conversationsFlyout':
@@ -835,13 +824,6 @@ function showFlyout(event, flyoutId) {
         <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Widgets</a>
         <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Bots</a>
         <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Reporting</a>
-        <span class="block pt-4 pb-2 ml-2 uppercase text-blue-950 text-[10px] font-bold tracking-[0.025rem]">Settings</span>
-        <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Saved replies</a>
-        <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Custom fields</a>
-        <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Agents</a>
-        <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Teams</a>
-        <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Integrations</a>
-        <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Exports</a>
       `;
       break;
     case 'broadcastsFlyout':
@@ -852,8 +834,8 @@ function showFlyout(event, flyoutId) {
       break;
       case 'aiAutomationFlyout':
       content = `
-        <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Broadcasts overview</a>
-        <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Templates</a>
+        <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">AI agents</a>
+        <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Knowledge base</a>
       `;
       break;
     case 'organisationsFlyout':
@@ -876,6 +858,18 @@ function showFlyout(event, flyoutId) {
         <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">VoIP Numbers</a>
         <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Usage and costs</a>
         <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Test VoIP connection</a>
+      `;
+      break;
+      case 'settingsFlyout':
+      content = `
+        <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">All settings</a>
+        <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Channels</a>
+        <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Widgets</a>
+        <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Chat agents</a>
+        <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Teams</a>
+        <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Saved replies</a>
+        <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Integrations</a>
+        <a href="#" class="block p-2 rounded text-gray-600 text-sm bg-white hover:text-blue-950 hover:bg-gray-100 transition">Exports</a>
       `;
       break;
     case 'contactsFlyout':
